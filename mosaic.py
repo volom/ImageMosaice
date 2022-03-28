@@ -224,11 +224,11 @@ def mosaic(img_path, tiles_path):
 		show_error("No images found in tiles directory '{}'".format(tiles_path))
 
 if __name__ == '__main__':
-	if len(sys.argv) < 3:
+	if len(sys.argv) < 2:
 		show_error('Usage: {} <image> <tiles directory>\r'.format(sys.argv[0]))
 	else:
 		source_image = sys.argv[1]
-		tile_dir = sys.argv[2]
+		tile_dir = './titles_dir'
 		if not os.path.isfile(source_image):
 			show_error("Unable to find image file '{}'".format(source_image))
 		elif not os.path.isdir(tile_dir):
