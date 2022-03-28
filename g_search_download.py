@@ -56,4 +56,5 @@ class GoogleeImageDownloader(object):
 if __name__ == "__main__":
     for kw in tqdm(keywords, position=0, leave=True):
         GoogleeImageDownloader(kw)
+        print(f"Fetch images by request - {kw}")
         time.sleep(3)
