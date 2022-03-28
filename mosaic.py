@@ -10,7 +10,7 @@ ENLARGEMENT    = 8		# the mosaic image will be this many times wider and taller 
 
 TILE_BLOCK_SIZE = TILE_SIZE / max(min(TILE_MATCH_RES, TILE_SIZE), 1)
 WORKER_COUNT = max(cpu_count() - 1, 1)
-OUT_FILE = 'mosaic.jpeg'
+OUT_FILE = f'{os.path.splitext(sys.argv[1])[0]}_{TILE_SIZE}_mosaic.jpeg'
 EOQ_VALUE = None
 
 class TileProcessor:
