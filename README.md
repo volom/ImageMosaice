@@ -14,7 +14,7 @@ Run the utility from the command line, as follows:
 
 For example:
 
-<pre>python mosaic.py game_of_thrones_poster.jpg /home/admin/images/screenshots
+<pre>python mosaic.py game_of_thrones_poster.jpg
 </pre>
 
 The images below show an example of how the mosaic tiles are matched to the details of the original image:
