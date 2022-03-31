@@ -20,7 +20,7 @@ driver = webdriver.Chrome() #options=chrome_options
 
 list_reqs = [] # put here your requests key words
 images_count = 10 # put here images yu want to donwload
-
+output_dir = '' # put here output dir for downloaded images
 
 for request in list_reqs:
     search_str = f'https://duckduckgo.com/?q={request}&t=h_&iax=images&ia=images'
@@ -31,7 +31,7 @@ for request in list_reqs:
     for index in range(images_count):
         image_link = driver.find_elements_by_xpath('//*[@id="zci-images"]/div[2]/div/div[1]/div[1]/div/div[1]/div/a/img[2]')[0].get_attribute("src")
         response = requests.get(image_link)
-        image_file_name = f"./images/ddg/{request}_{index}.jpeg"
+        image_file_name = f"{output_dir}/{request}_{index}.jpeg"
         file = open(image_file_name, "wb")
         file.write(response.content)
         file.close()
