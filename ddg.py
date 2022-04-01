@@ -25,10 +25,11 @@ output_dir = '' # put here output dir for downloaded images
 for request in list_reqs:
     search_str = f'https://duckduckgo.com/?q={request}&t=h_&iax=images&ia=images'
     driver.get(search_str)
-
-    WebDriverWait(driver,10).until(EC.element_to_be_clickable((By.XPATH, '//*[@id="zci-images"]/div/div[2]/div/div[1]/div[1]/span/img'))).click()
+    #XPATH of first image
+    WebDriverWait(driver,10).until(EC.element_to_be_clickable((By.XPATH, '//*[@id="zci-ihttps://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Great_emblem_of_the_Russian_Ground_Forces.svg/800px-Great_emblem_of_the_Russian_Ground_Forces.svg.pngmages"]/div/div[2]/div/div[1]/div[1]/span/img'))).click()
 
     for index in range(images_count):
+        #XPATH of selected image
         image_link = driver.find_elements_by_xpath('//*[@id="zci-images"]/div[2]/div/div[1]/div[1]/div/div[1]/div/a/img[2]')[0].get_attribute("src")
         response = requests.get(image_link)
         image_file_name = f"{output_dir}/{request}_{index}.jpeg"
