@@ -20,4 +20,4 @@ for index, filename in  tqdm(enumerate(os.listdir(images_dir)), position=0, leav
 
 
 for index in tqdm(duplicates, position=0, leave=True):
-    os.remove(file_list[index[0]])
+    os.remove(f'{images_dir}/{file_list[index[0]]}')
